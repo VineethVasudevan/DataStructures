@@ -54,6 +54,43 @@
             n.next = node;
         }
     }
+
+    public void DeleteAtFront()
+    {
+        Node n = head;
+        if(n!=null)
+            head=n.next;
+    }
+
+    public void DeleteAtRear()
+    {
+        Node n = head;
+        while(n.next.next != null)
+        {
+            n=n.next;
+        }
+        n.next = null;
+    }
+
+    public void DeleteAtPosition(int position)
+    {
+        Node n = head;
+        if(position < 1)
+            System.Console.WriteLine("Position cannot be less than 1");
+        else if(position == 1 && n!=null)
+            head = n.next;
+        else if(position > 1)
+        {
+            for(int i=2 ; i < position; i++)
+            {
+                if(n!=null && n.next.next != null)
+                {
+                    n=n.next;
+                }
+            }
+            n.next = n.next.next;
+        } 
+    }
     public void Print()
     {
         Node n= head;
@@ -79,5 +116,14 @@
         list.InsertAtPosition(7,6);
 
         list.Print();
+
+        System.Console.WriteLine("List after Delete Operation:");
+        list.DeleteAtFront();
+        list.DeleteAtRear();
+        list.DeleteAtPosition(6);
+
+        list.Print();
+
+
     }
 }
