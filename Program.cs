@@ -124,6 +124,13 @@
 
         list.Print();
 
+        int []arr = new int[] {1,2,4,5,6,10,12,20};
+        int []a = new int[] {10,1,0,6,20,7};
+        int key = 6;
+        System.Console.WriteLine($"Element {key} found at position : {BinarySearch.Search(arr,key)}");
+
+        System.Console.WriteLine("Sorted array: Selection Sort");
+        SelectionSort.Sort(a);
 
     }
 }
